@@ -1,0 +1,35 @@
+﻿<div>
+    @using (Html.BeginForm("Subscribe", "Home", FormMethod.Post))
+    {
+        <h5>Subscribe</h5>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="form-group has-feedback">
+                    <label for="email" class="sr-only">Email</label>
+                    <input type="email" class="form-control" name="email" id="email" placeholder="Email">
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group has-feedback">
+                    <label for="email" class="sr-only">Email</label>
+                    <select id="category" name="category" class="form-control">
+                        <option selected>Choose...</option>
+                        <option value="All">All</option>
+                        <option value="Government">Government</option>
+                        <option value="Weather">Weather</option>
+                        <option value="Traffic">Traffic</option>
+                        <option value="Sports">Sports</option>
+                        <option value="Entertainment">Entertainment</option>
+                        <option value="Technology">Technology</option>
+                        <option value="Health">Health</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group has-feedback">
+                    <input type="submit" id="submitId" value="submit" class="btn btn-info" />
+                </div>                    
+            </div>
+        </div>
+    }
+</div>

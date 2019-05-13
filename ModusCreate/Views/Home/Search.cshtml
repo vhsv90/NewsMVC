@@ -1,0 +1,37 @@
+﻿@model IEnumerable<ModusCreate.Models.News>
+
+@{
+    var searchTerm = ViewBag.searchKey;
+}
+
+<div>
+    <h1 class="display-4">Search Results:</h1>
+</div>
+
+<div>
+
+    <div class="table-responsive">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>@Html.DisplayNameFor(x => x.FirstOrDefault().Title)</th>
+                    <th>@Html.DisplayNameFor(x => x.FirstOrDefault().Description)</th>
+                    <th>@Html.DisplayNameFor(x => x.FirstOrDefault().Category)</th>
+                    <th>@Html.DisplayNameFor(x => x.FirstOrDefault().Date)</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var m in Model)
+                {
+                    <tr>
+                        <!-- TODO: add extension method to substring text with =< 40-&-150  -->
+                        <td>@m.Title</td>
+                        <td>@m.Description.Substring(0, 150)...</td>
+                        <td>@m.Category</td>
+                        <td>@m.Date.ToString("dddd, dd MMMM yyyy")</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
